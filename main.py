@@ -46,7 +46,7 @@ while programRunning == True:
     softwareList = [save_audacity, save_default_recorder]
     softwareSelected = save_audacity
 
-    softwareChoice = int(input("1.Audacity \n2.Normal\n0.Exit"))
+    softwareChoice = int(input("1.Audacity \n2.Normal\n0.Exit\n:"))
 
     if softwareChoice == 1:
         softwareSelected = save_audacity
@@ -57,9 +57,15 @@ while programRunning == True:
     elif softwareChoice == 0:
         print("BYE")
         programRunning = False
+        break
 
 
     minsChoice=int(input("1.30 mins \n2.60 mins \n3.90 mins\n0.Exit\n:"))
+
+    if minsChoice == 0:
+        programRunning = False
+        break
+
     name=input("Enter Name:")
     if minsChoice==1:
         thirty()
@@ -72,6 +78,3 @@ while programRunning == True:
     elif minsChoice==3:
         ninety()
         softwareSelected(name)
-
-    elif minsChoice == 0:
-        programRunning = False
